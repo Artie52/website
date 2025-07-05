@@ -1,0 +1,1239 @@
+                <li><a href="#shop">SHOP</a></li><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MACEVSKIS AUDIO</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Raleway:wght@300;400;500;700&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Horizon Font Face Declaration */
+        @font-face {
+            font-family: 'Horizon';
+            src: url('./fonts/Horizon.woff2') format('woff2'),
+                 url('./fonts/Horizon.woff') format('woff'),
+                 url('./fonts/Horizon.otf') format('opentype'),
+                 url('./fonts/Horizon.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Horizon', 'Raleway', sans-serif;
+            background: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #ffffff;
+            margin: 3px 0;
+            transition: 0.3s;
+            transform-origin: center;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(26, 26, 26, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            padding-top: 80px;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .mobile-nav li {
+            margin: 30px 0;
+        }
+
+        .mobile-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 15px;
+        }
+
+        .mobile-nav a:hover {
+            color: #ff6b35;
+            transform: translateY(-2px);
+            text-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .logo {
+            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: normal;
+            color: #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-weight: normal;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+            transform: translateY(-2px);
+            text-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff6b35;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(42, 42, 42, 0.8) 100%);
+            position: relative;
+            padding-top: 80px;
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./your-hero-image.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            z-index: 1;
+            animation: hero-float 8s ease-in-out infinite;
+        }
+
+        @keyframes hero-float {
+            0%, 100% { 
+                transform: translateY(0px) scale(1); 
+            }
+            50% { 
+                transform: translateY(-10px) scale(1.02); 
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: normal;
+            letter-spacing: 3px;
+        }
+
+        .hero .highlight {
+            color: #ff6b35;
+            font-weight: 900;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #cccccc;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 2px;
+            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-weight: normal;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: #ff6b35;
+            color: #1a1a1a;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: #ff6b35;
+            border-color: #ff6b35;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background: #ffffff;
+            color: #1a1a1a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .section-header-container {
+            position: relative;
+            text-align: center;
+            margin-bottom: 40px;
+            overflow: visible;
+            min-height: 80px;
+        }
+
+        .section-title {
+            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 12px;
+            z-index: 2;
+        }
+
+        .section-title-bg {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(255, 107, 53, 0.3);
+            text-stroke: 2px rgba(255, 107, 53, 0.3);
+            z-index: 1;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background: #ff6b35;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Public Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: #0f0f0f;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image-placeholder {
+            font-size: 5rem;
+            color: #ff6b35;
+        }
+
+        .floating-image {
+            animation: float-gentle 9s ease-in-out infinite;
+        }
+
+        @keyframes float-gentle {
+            0%, 100% { transform: translateX(0px); }
+            50% { transform: translateX(15px); }
+        }
+
+        .about-text {
+            color: #cccccc;
+            line-height: 2;
+        }
+
+        .about-text h3 {
+            color: #ffffff;
+            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 12px;
+            text-align: center;
+        }
+
+        .about-text h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background: #ff6b35;
+        }
+
+        .about-text p {
+            margin-bottom: 30px;
+            font-size: 1.15rem;
+            border-bottom: 50px;
+            font-family: 'Public Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 107, 53, 0.1);
+            color: #ff6b35;
+            padding: 8px 16px;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background: #1a1a1a;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .portfolio-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+        }
+
+        .portfolio-header {
+            padding: 25px 25px 15px 25px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .portfolio-header h3 {
+            color: #ffffff !important;
+            margin-bottom: 8px;
+            font-family: 'Horizon', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .portfolio-credits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .portfolio-credit-tag {
+            background: rgba(255, 107, 53, 0.2);
+            color: #ff6b35;
+            padding: 4px 10px;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            font-family: 'Public Sans', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b35;
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.2);
+        }
+
+        .portfolio-item:hover .portfolio-header {
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: sca;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 107, 53, 0.473);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 32px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .play-button:hover {
+            background: rgba(255, 107, 53, 0.897);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 2px;
+            font-size: 0.8rem;
+        }
+
+        .portfolio-content {
+            padding: 0;
+        }
+
+        .portfolio-item h3 {
+            /* color: #ff6b35; */
+            margin-bottom: 12px;
+            font-family: 'Horizon', sans-serif;
+            font-size: 1rem;
+            font-weight: 100;
+            letter-spacing: 0.1px;
+        }
+
+        .portfolio-item p {
+            color: #cccccc;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .portfolio-tags {
+            display: none;
+        }
+
+        .tag {
+            background: rgba(255, 107, 53, 0.2);
+            color: #ff6b35;
+            padding: 6px 14px;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            font-family: 'Public Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        .video-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .video-stats span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-modal.active {
+            display: flex;
+        }
+
+        .video-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            aspect-ratio: 16/9;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #ff6b35;
+        }
+
+        /* Shop Section */
+        .shop {
+            padding: 100px 0;
+            background: #1a1a1a;
+        }
+
+        .shop-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        .shop-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .preset-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .preset-image:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b35;
+        }
+
+        .shop-text {
+            color: #ffffff;
+        }
+
+        .shop-text h3 {
+            font-family: 'Public Sans', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #cccccc;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            padding: 20px 40px;
+            background: #ff6b35;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 3px;
+            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-weight: normal;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid #ff6b35;
+        }
+
+        .shop-btn:hover {
+            background: transparent;
+            color: #ff6b35;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: #0f0f0f;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            color: #ff6b35;
+            margin-bottom: 20px;
+            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info p {
+            color: #cccccc;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            font-family: 'Public Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        .contact-email {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px 40px;
+            border-radius: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            color: #ff6b35;
+            font-family: 'Public Sans', sans-serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            color: #ffffff;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 107, 53, 0.1);
+            border-color: #ff6b35;
+            color: #ff6b35;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-content {
+            color: #cccccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .services-grid { grid-template-columns: 1fr; }
+            .about-content { grid-template-columns: 1fr; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .shop-content { grid-template-columns: 1fr; gap: 40px; }
+            .shop-images { grid-template-columns: 1fr; }
+            .contact-content { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">MACEVSKIS AUDIO</div>
+            <div class="menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#shop">SHOP</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="#home" onclick="closeMobileMenu()">HOME</a></li>
+                <li><a href="#about" onclick="closeMobileMenu()">ABOUT</a></li>
+                <li><a href="#portfolio" onclick="closeMobileMenu()">PORTFOLIO</a></li>
+                <li><a href="#shop" onclick="closeMobileMenu()">SHOP</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()">CONTACT</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <!-- Replace 'your-hero-image.jpg' in CSS with your background image -->
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1><span class="highlight">ARTURS MACEVSKIS</span></h1>
+                <p>YOUR NEXT MIXING ENGINEER</p>
+                <div class="cta-buttons">
+                    <a href="#about" class="btn btn-primary">About Me</a>
+                    <a href="#portfolio" class="btn btn-secondary">Listen to Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header-container">
+                <div class="section-title-bg">ABOUTME</div>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image floating-image">
+                    <!-- Replace this placeholder with your image by uncommenting the line below -->
+                    <img src="about-image.png" alt="Your Name">
+                </div>
+                <div class="about-text">
+                    <p>Hi, I am Arturs, a producer, mixing and mastering engineer</p>
+                    
+                    <p>I've been mixing music for several years, working closely with bands to shape and refine their sound. Whether the goal is something tight and punchy or more raw and atmospheric, I work to make each track sound its best.</p>
+
+                    <!-- <div class="skills">
+                        <span class="skill-tag">Pro Tools</span>
+                        <span class="skill-tag">Logic Pro</span>
+                        <span class="skill-tag">Ableton Live</span>
+                        <span class="skill-tag">Mixing</span>
+                        <span class="skill-tag">Mastering</span>
+                        <span class="skill-tag">Sound Design</span>
+                        <span class="skill-tag">Beat Making</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header-container">
+                <div class="section-title-bg">PORTFOLIO</div>
+                <h2 class="section-title">Recent Work</h2>
+            </div>
+            <p class="section-subtitle">Listen to some of my latest mixing projects.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" onclick="openVideo('DKD2wcLvx4E')">
+                    <div class="portfolio-header">
+                        <h3>UNSAINTED - AVOIDANT FEAT. DISTANT</h3>
+                        <div class="portfolio-credits">
+                            <span class="portfolio-credit-tag">Writing</span>
+                            <span class="portfolio-credit-tag">Recording</span>
+                            <span class="portfolio-credit-tag">Producing</span>
+                            <span class="portfolio-credit-tag">Mixing</span>
+                            <span class="portfolio-credit-tag">Mastering</span>
+                        </div>
+                    </div>
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/DKD2wcLvx4E/maxresdefault.jpg" alt="UNSAINTED - AVOIDANT FEAT. DISTANT">
+                        <div class="play-button">▶</div>
+                        <div class="video-duration">4:23</div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" onclick="openVideo('jykzV_4Krwc')">
+                    <div class="portfolio-header">
+                        <h3><b>UNSAINTED</b> - DECIMATE</h3>
+                        <div class="portfolio-credits">
+                            <span class="portfolio-credit-tag">Writing</span>
+                            <span class="portfolio-credit-tag">Recording</span>
+                            <span class="portfolio-credit-tag">Producing</span>
+                            <span class="portfolio-credit-tag">Mixing</span>
+                            <span class="portfolio-credit-tag">Mastering</span>
+                        </div>
+                    </div>
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/jykzV_4Krwc/maxresdefault.jpg" alt="UNSAINTED - DECIMATE">
+                        <div class="play-button">▶</div>
+                        <div class="video-duration">2:15</div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" onclick="openVideo('AMy_pgcXjw8')">
+                    <div class="portfolio-header">
+                        <h3>SEIRA - TORCH</h3>
+                        <div class="portfolio-credits">
+                            <span class="portfolio-credit-tag">Mixing</span>
+                            <span class="portfolio-credit-tag">Mastering</span>
+                        </div>
+                    </div>
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/AMy_pgcXjw8/maxresdefault.jpg" alt="Project Name - Song Title">
+                        <div class="play-button">▶</div>
+                        <div class="video-duration">3:45</div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" onclick="openVideo('3BmQ-CyX8qU')">
+                    <div class="portfolio-header">
+                        <h3>AMBER CREEK - THE WORLD OF WAR (LIVE at Fontaine Palace)</h3>
+                        <div class="portfolio-credits">
+                            <span class="portfolio-credit-tag">Recording</span>
+                            <span class="portfolio-credit-tag">Mixing</span>
+                            <span class="portfolio-credit-tag">mastering</span>
+                        </div>
+                    </div>
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/3BmQ-CyX8qU/maxresdefault.jpg" alt="Artist Name - Track Title">
+                        <div class="play-button">▶</div>
+                        <div class="video-duration">5:12</div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" onclick="openVideo('3GFjALn1JaU')">
+                    <div class="portfolio-header">
+                        <h3>SLEEP TOKEN - The Apparition | COVER (Feat. Anna from Amber Creek)</h3>
+                        <div class="portfolio-credits">
+                            <span class="portfolio-credit-tag">Recording</span>
+                            <span class="portfolio-credit-tag">Mixing</span>
+                            <span class="portfolio-credit-tag">Mastering</span>
+                        </div>
+                    </div>
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/3GFjALn1JaU/maxresdefault.jpg" alt="Band Name - Song Name">
+                        <div class="play-button">▶</div>
+                        <div class="video-duration">3:28</div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" onclick="openVideo('prAqZVsLh-k')">
+                    <div class="portfolio-header">
+                        <h3>ASKIN - Stay (feat. St.Levica)</h3>
+                        <div class="portfolio-credits">
+                            <span class="portfolio-credit-tag">Mixing</span>
+                            <span class="portfolio-credit-tag">Mastering</span>
+                        </div>
+                    </div>
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/prAqZVsLh-k/maxresdefault.jpg" alt="Musician - Track Title">
+                        <div class="play-button">▶</div>
+                        <div class="video-duration">4:07</div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="openVideo('wfCKULsZQeA')">
+                    <div class="portfolio-header">
+                        <h3>SXIMA - Live at Melna Piektdiena [Latvian Annual Metal Awards 2023]</h3>
+                        <div class="portfolio-credits">
+                            <span class="portfolio-credit-tag">Recording</span>
+                            <span class="portfolio-credit-tag">Mixing</span>
+                            <span class="portfolio-credit-tag">Mastering</span>
+                        </div>
+                    </div>
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/wfCKULsZQeA/maxresdefault.jpg" alt="Additional Project - Title">
+                        <div class="play-button">▶</div>
+                        <div class="video-duration">3:52</div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="openVideo('h8QG6QYoHyU')">
+                    <div class="portfolio-header">
+                        <h3>SEIRA - Lowest Highs</h3>
+                        <div class="portfolio-credits">
+                            <span class="portfolio-credit-tag">Producing</span>
+                            <span class="portfolio-credit-tag">Recording</span>
+                            <span class="portfolio-credit-tag">Mixing</span>
+                            <span class="portfolio-credit-tag">Mastering</span>
+                        </div>
+                    </div>
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/h8QG6QYoHyU/maxresdefault.jpg" alt="Project Name - Song Title">
+                        <div class="play-button">▶</div>
+                        <div class="video-duration">4:15</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop" id="shop">
+        <div class="container">
+            <div class="section-header-container">
+                <div class="section-title-bg">SHOP</div>
+                <h2 class="section-title">Shop</h2>
+            </div>
+            <div class="shop-content">
+                <div class="shop-images">
+                    <!-- Replace with your drum preset pack image -->
+                    <img src="./shop-presets.png" alt="Drum Preset Packs" class="preset-image floating-image">
+                </div>
+                <div class="shop-text">
+                    <h3>ELEVATE YOUR DRUM ARSENAL WITH CUSTOM MADE PRESETS FOR SUPERIOR DRUMMER 3. PRESETS WERE MADE AS READY TO USE OUT OF THE BOX. PERFECT FIT FOR SONGWRITING AND MIXING.</h3>
+                    <a href="https://drumscape.gumroad.com/" target="_blank" class="shop-btn">VISIT SHOP</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header-container">
+                <div class="section-title-bg">CONTACT</div>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Work Together</h3>
+                    <p>Ready to take your music to the next level? Get in touch to discuss your project and receive a custom quote.</p>
+                    
+                    <div class="contact-email">
+                        arturs.macevskis@gmail.com
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://youtube.com/@yourhandle" title="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a2.995 2.995 0 0 0-2.109-2.123C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.389.517A2.995 2.995 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.995 2.995 0 0 0 2.109 2.123C4.495 20.454 12 20.454 12 20.454s7.505 0 9.389-.517a2.995 2.995 0 0 0 2.109-2.123C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="https://instagram.com/yourhandle" title="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="https://facebook.com/yourhandle" title="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 AudioPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-container">
+            <button class="close-modal" onclick="closeVideo()">&times;</button>
+            <iframe id="videoFrame" src="" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu functions
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            mobileNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        function closeMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            mobileNav.classList.remove('active');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Video modal functions
+        function openVideo(videoId) {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoFrame');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideo() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoFrame');
+            iframe.src = '';
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideo();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideo();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(26, 26, 26, 0.98)';
+            } else {
+                header.style.background = 'rgba(26, 26, 26, 0.95)';
+            }
+        });
+
+        // Add hover effects to portfolio items
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-10px)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
