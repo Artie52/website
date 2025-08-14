@@ -9,11 +9,9 @@
     <style>
         /* Horizon Font Face Declaration */
         @font-face {
-            font-family: 'Horizon';
-            src: url('./fonts/Horizon.woff2') format('woff2'),
-                 url('./fonts/Horizon.woff') format('woff'),
-                 url('./fonts/Horizon.otf') format('opentype'),
-                 url('./fonts/Horizon.ttf') format('truetype');
+            font-family: 'horizon';
+            src: url('./fonts/horizon.otf') format('opentype'),
+                 url('./fonts/horizon_outlined.otf') format('opentype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -26,7 +24,7 @@
         }
 
         body {
-            font-family: 'Horizon', 'Raleway', sans-serif;
+            font-family: 'horizon', 'Raleway', sans-serif;
             background: #1a1a1a;
             color: #ffffff;
             line-height: 1.6;
@@ -122,7 +120,7 @@
         .mobile-nav a {
             color: #ffffff;
             text-decoration: none;
-            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-family: 'horizon', 'Montserrat', sans-serif;
             font-size: 1.5rem;
             font-weight: normal;
             text-transform: uppercase;
@@ -139,7 +137,7 @@
         }
 
         .logo {
-            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-family: 'horizon', 'Montserrat', sans-serif;
             font-size: 24px;
             font-weight: normal;
             color: #ff6b35;
@@ -156,7 +154,7 @@
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
-            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-family: 'horizon', 'Montserrat', sans-serif;
             font-weight: normal;
             transition: all 0.3s ease;
             position: relative;
@@ -240,7 +238,7 @@
         }
 
         .hero h1 {
-            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-family: 'horizon', 'Montserrat', sans-serif;
             font-size: 4rem;
             margin-bottom: 20px;
             font-weight: normal;
@@ -273,7 +271,7 @@
             padding: 15px 30px;
             text-decoration: none;
             border-radius: 2px;
-            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-family: 'horizon', 'Montserrat', sans-serif;
             font-weight: normal;
             transition: all 0.3s ease;
             text-transform: uppercase;
@@ -316,7 +314,7 @@
         }
 
         .section-title {
-            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-family: 'horizon', 'Montserrat', sans-serif;
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: #ffffff;
@@ -333,7 +331,7 @@
             top: -40px;
             left: 50%;
             transform: translateX(-50%);
-            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-family: 'horizon', 'Montserrat', sans-serif;
             font-size: 4.5rem;
             font-weight: 900;
             text-transform: uppercase;
@@ -421,7 +419,7 @@
 
         .about-text h3 {
             color: #ffffff;
-            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-family: 'horizon', 'Montserrat', sans-serif;
             font-size: 2.5rem;
             margin-bottom: 20px;
             font-weight: normal;
@@ -497,7 +495,7 @@
         .portfolio-header h3 {
             color: #ffffff !important;
             margin-bottom: 8px;
-            font-family: 'Horizon', sans-serif;
+            font-family: 'horizon', sans-serif;
             font-size: 1.3rem;
             font-weight: 900;
             text-transform: uppercase;
@@ -594,7 +592,7 @@
         .portfolio-item h3 {
             /* color: #ff6b35; */
             margin-bottom: 12px;
-            font-family: 'Horizon', sans-serif;
+            font-family: 'horizon', sans-serif;
             font-size: 1rem;
             font-weight: 100;
             letter-spacing: 0.1px;
@@ -737,7 +735,7 @@
             color: #1a1a1a;
             text-decoration: none;
             border-radius: 3px;
-            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-family: 'horizon', 'Montserrat', sans-serif;
             font-weight: normal;
             font-size: 1.1rem;
             text-transform: uppercase;
@@ -768,7 +766,7 @@
         .contact-info h3 {
             color: #ff6b35;
             margin-bottom: 20px;
-            font-family: 'Horizon', 'Montserrat', sans-serif;
+            font-family: 'horizon', 'Montserrat', sans-serif;
             font-size: 1.5rem;
             font-weight: normal;
             text-transform: uppercase;
@@ -1065,6 +1063,21 @@
                     </div>
                     <div class="video-thumbnail">
                         <img src="https://img.youtube.com/vi/h8QG6QYoHyU/maxresdefault.jpg" alt="Project Name - Song Title">
+                        <div class="play-button">▶</div>
+                        <div class="video-duration">4:15</div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="openVideo('PMp3QJgCDtU')">
+                    <div class="portfolio-header">
+                        <h3>THE MISTO - Swarm City</h3>
+                        <div class="portfolio-credits">
+                            <span class="portfolio-credit-tag">Mixing</span>
+                            <span class="portfolio-credit-tag">Mastering</span>
+                        </div>
+                    </div>
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/PMp3QJgCDtU/maxresdefault.jpg" alt="Project Name - Song Title">
                         <div class="play-button">▶</div>
                         <div class="video-duration">4:15</div>
                     </div>
