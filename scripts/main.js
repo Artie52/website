@@ -160,35 +160,24 @@
 
   // ── Modal ──
   function openModal(item, vid) {
-    const origin = window.location.origin;
-    document.getElementById('ytIframe').src =
-      `https://www.youtube.com/embed/${vid}?autoplay=1&rel=0&enablejsapi=1&origin=${encodeURIComponent(origin)}`;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${vid}?autoplay=1`;
+    iframe.allowFullscreen = true;
+    document.getElementById('modalVideoWrap').appendChild(iframe);
     document.getElementById('modalTitle').textContent = item.title;
     document.getElementById('modalMeta').textContent = `${item.artist} — ${item.year}`;
     document.getElementById('modalOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
-    document.getElementById('modalFallback').style.display = 'none';
-    document.getElementById('modalFallbackLink').href = item.url;
   }
 
   function closeModal(e) {
-    if (e && e.target !== document.getElementById('modalOverlay') && !e.currentTarget.classList.contains('modal-close')) return;
-    document.getElementById('ytIframe').src = '';
+    if (e && e.target !== document.getElementById('modalOverlay') && !e.target.closest('.modal-close')) return;
+    document.getElementById('modalVideoWrap').innerHTML = '';
     document.getElementById('modalOverlay').classList.remove('open');
     document.body.style.overflow = '';
   }
 
-  window.addEventListener('message', (e) => {
-    if (!e.origin.includes('youtube.com')) return;
-    try {
-      const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
-      if (data.event === 'onError') {
-        document.getElementById('modalFallback').style.display = 'flex';
-      }
-    } catch {}
-  });
-
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal({}); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
   // ── Smooth scroll ──
   function scrollTo(selector) {

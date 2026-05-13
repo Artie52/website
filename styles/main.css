@@ -533,32 +533,25 @@
 
   /* ── MODAL ── */
   .modal-overlay {
+    display: none;
     position: fixed;
     inset: 0;
     z-index: 200;
     background: rgba(10,10,10,0.95);
     backdrop-filter: blur(8px);
-    display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
   }
   .modal-overlay.open {
-    opacity: 1;
-    pointer-events: all;
+    display: flex;
   }
 
   .modal-box {
     width: 100%;
     max-width: 900px;
     position: relative;
-    transform: scale(0.93);
-    transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
   }
-  .modal-overlay.open .modal-box { transform: scale(1); }
 
   .modal-close {
     position: absolute;
@@ -676,6 +669,7 @@
     transition: background 0.2s;
   }
   .modal-fallback a:hover { background: rgba(58,102,68,0.15); }
+
 
   .modal-bottombar {
     background: #0d0d0d;
