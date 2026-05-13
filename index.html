@@ -13,19 +13,19 @@
 <!-- SIDEBAR -->
 <aside class="sidebar">
   <div class="sidebar-nav">
-    <div class="nav-item active" data-section="hero" onclick="scrollTo('#hero')" title="Home">
+    <div class="nav-item active" data-section="hero" onclick="navTo('#hero')" title="Home">
       <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
     </div>
-    <div class="nav-item" data-section="about" onclick="scrollTo('#about')" title="About">
+    <div class="nav-item" data-section="about" onclick="navTo('#about')" title="About">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
     </div>
-    <div class="nav-item" data-section="portfolio" onclick="scrollTo('#portfolio')" title="Portfolio">
+    <div class="nav-item" data-section="portfolio" onclick="navTo('#portfolio')" title="Portfolio">
       <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
     </div>
-    <div class="nav-item" data-section="store" onclick="scrollTo('#store')" title="Store">
+    <div class="nav-item" data-section="store" onclick="navTo('#store')" title="Store">
       <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
     </div>
-    <div class="nav-item" data-section="contact" onclick="scrollTo('#contact')" title="Contact">
+    <div class="nav-item" data-section="contact" onclick="navTo('#contact')" title="Contact">
       <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     </div>
   </div>
@@ -46,9 +46,9 @@
       <span class="hero-name-first">ARTŪRS</span>
       <span class="hero-name-last">MAČEVSKIS</span>
       <div class="hero-subtitle">Audio Engineer · Producer</div>
-      <button class="hero-play" onclick="scrollTo('#portfolio')">
+      <button class="hero-play" onclick="navTo('#portfolio')">
         <span class="play-icon"></span>
-        Play Reel
+        Listen to Work
       </button>
     </div>
     <div class="hero-scroll">
@@ -122,11 +122,15 @@
 
   <!-- STORE -->
   <section id="store">
-    <div class="section-label">[STORE_01] PRODUCTS — AVAILABLE_NOW</div>
     <div class="store-inner fade-in">
-      <div class="store-product-img">
-        <div class="store-img-label">● AVAILABLE</div>
-        <div class="drum-vis"></div>
+      <div class="store-product-col">
+        <div class="store-product-frame">
+          <div class="store-product-img">
+            <div class="store-img-label">● AVAILABLE</div>
+            <img src="images/product.jpg" alt="Drum Presets Vol. 1" class="product-img">
+          </div>
+          <div class="store-photo-border"></div>
+        </div>
       </div>
       <div class="store-info">
         <div class="store-breadcrumb">SUPERIOR_DRUMMER_3 / PRESET_PACK</div>
@@ -139,7 +143,7 @@
           <li>Modern standart hard hitting drum sound</li>
           <li>Instant download via Gumroad</li>
         </ul>
-        <button class="btn-get">GET_PRESETS ↗</button>
+        <button class="btn-get" onclick="window.open('https://drumscape.gumroad.com/', '_blank')">GET_PRESETS ↗</button>
         <div class="store-platform">PLATFORM: <span>Superior Drummer 3 required</span></div>
       </div>
     </div>
@@ -147,57 +151,29 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="section-label" style="color: rgba(58,102,68,0.8)">[OUT_01] CONTACT — OPEN FOR BOOKINGS</div>
     <div class="contact-inner fade-in">
-      <div class="contact-left">
-        <h2 class="contact-heading">
-          Let's build something
-          <em>extraordinary.</em>
-        </h2>
-        <p class="contact-desc">
-          Available for mixing, mastering, and production work. Get in touch to discuss your next project.
-        </p>
-        <div class="social-links">
-          <div class="social-link" title="YouTube">
-            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02"/></svg>
-          </div>
-          <div class="social-link" title="Instagram">
-            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </div>
-          <div class="social-link" title="Bandcamp">
-            <svg viewBox="0 0 24 24"><path d="M3 17l5-10h13l-5 10z"/></svg>
-          </div>
-        </div>
-      </div>
-      <div class="contact-right">
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">Name</label>
-            <input class="form-input" type="text" placeholder="Your name">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email</label>
-            <input class="form-input" type="email" placeholder="your@email.com">
-          </div>
-        </div>
-        <div class="project-types">
-          <div class="type-label">Project_Type</div>
-          <div class="type-options">
-            <button class="type-btn active">Mixing</button>
-            <button class="type-btn">Mastering</button>
-            <button class="type-btn">Production</button>
-            <button class="type-btn">Recording</button>
-            <button class="type-btn">Other</button>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Message</label>
-          <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
-        </div>
-        <button class="btn-send">
-          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
-          SEND_SIGNAL
-        </button>
+      <h2 class="contact-heading">
+        Let's build something
+        <em>extraordinary.</em>
+      </h2>
+      <p class="contact-desc">
+        Available for mixing, mastering, and production work. Get in touch to discuss your next project.
+      </p>
+      <a class="btn-send" href="mailto:arturs.macevskis@gmail.com?subject=Project%20inquiry">
+        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+        SEND_SIGNAL
+      </a>
+      <a class="contact-email" href="mailto:arturs.macevskis@gmail.com">arturs.macevskis@gmail.com</a>
+      <div class="social-links">
+        <a class="social-link" href="https://www.youtube.com/@artie52" target="_blank" rel="noopener" title="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02"/></svg>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/artur4ig" target="_blank" rel="noopener" title="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a class="social-link" href="https://www.facebook.com/arthur.machevskis" target="_blank" rel="noopener" title="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
       </div>
     </div>
   </section>
