@@ -502,7 +502,7 @@
 
   .project-artist {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 0.12em;
     color: var(--gray);
     text-transform: uppercase;
@@ -517,17 +517,17 @@
 
   .project-role-tag {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 0.08em;
     color: var(--green);
     border: 1px solid rgba(58,102,68,0.3);
-    padding: 2px 8px;
+    padding: 3px 9px;
     text-transform: uppercase;
   }
 
   .project-year {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 8px;
+    font-size: 10px;
     color: var(--gray);
   }
 
@@ -717,6 +717,11 @@
     gap: 80px;
     align-items: start;
     max-width: 1000px;
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
     width: 100%;
   }
 
@@ -734,6 +739,10 @@
     display: inline-block;
     width: 100%;
     max-width: 340px;
+<<<<<<< Updated upstream
+=======
+    animation: floatY 5s ease-in-out infinite;
+>>>>>>> Stashed changes
   }
 
   .store-photo-border {
@@ -745,6 +754,10 @@
     border: 1px solid rgba(58,102,68,0.4);
     border-radius: 2px;
     pointer-events: none;
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
   }
 
   .store-product-img {
