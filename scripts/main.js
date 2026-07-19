@@ -39,6 +39,13 @@
       year: '2026'
     },
     {
+      title: 'Essential',
+      artist: 'DARYN BLANK',
+      url: 'https://www.youtube.com/watch?v=tBslc5YPKzY',
+      role: 'RECORDING + MIX + MASTER',
+      year: '2026'
+    },
+    {
       title: 'Live session at THE LODGE',
       artist: 'EKLEKTIKA',
       url: 'https://www.youtube.com/watch?v=rpuk6BXJF44',
