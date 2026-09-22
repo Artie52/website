@@ -7,7 +7,7 @@
       title: 'The Anchorite',
       artist: 'EREMOS-IX',
       url: 'https://www.youtube.com/watch?v=2OTNk9fdnWw',
-      role: 'MIX + MASTER',
+      role: 'MUSIC VIDEO + MIX + MASTER',
       year: '2026'
     },
     {
