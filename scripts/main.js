@@ -4,6 +4,13 @@
   // ═══════════════════════════════════════════════════════════════════
   const PORTFOLIO_ITEMS = [
     {
+      title: 'The Anchorite',
+      artist: 'EREMOS-IX',
+      url: 'https://www.youtube.com/watch?v=2OTNk9fdnWw',
+      role: 'MIX + MASTER',
+      year: '2026'
+    },
+    {
       title: 'Heartbreaker',
       artist: 'AMBER CREEK',
       url: 'https://www.youtube.com/watch?v=CmQo2cJA9JA',
